@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      drumName: '',
+      drumName: 'Boom chicka boom',
       keyInfo: [
         {
           keyName: 'Q',
@@ -79,16 +79,18 @@ class App extends Component {
         <main>
           <div id="display">
             <h1>{this.state.drumName}</h1>
-            {this.state.keyInfo.map(keyProps => (
-              <KeyPad
-                key={keyProps.keyID}
-                keyName={keyProps.keyName}
-                keyNum={keyProps.keyNum}
-                keyID={keyProps.keyID}
-                keySource={keyProps.keySource}
-                setDrum={this.setDrumName}
-              />
-            ))}
+            <div id="drum-keys">
+              {this.state.keyInfo.map(keyProps => (
+                <KeyPad
+                  key={keyProps.keyID}
+                  keyName={keyProps.keyName}
+                  keyNum={keyProps.keyNum}
+                  keyID={keyProps.keyID}
+                  keySource={keyProps.keySource}
+                  setDrum={this.setDrumName}
+                />
+              ))}
+            </div>
           </div>
         </main>
       </div>
